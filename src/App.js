@@ -1,5 +1,6 @@
 import Add from "./components/Add";
 import Greetings from "./components/Greetings";
+import Calculate from "./components/Calculate";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <h1>React Mastery begins Now!</h1>
       <Greetings />
       <Add />
+      <Calculate />
     </>
   );
 }
