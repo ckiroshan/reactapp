@@ -1,9 +1,10 @@
-const Userprops = (props) => {
+const Userprops = ({ img, name, hobbies, children }) => {
   return (
     <>
-      <img src={props.img} alt={props.name} />
-      <h1>Name: {props.name}</h1>
-      <h3>Hobbies: {props.hobbies}</h3>
+      <img src={img} alt={name} />
+      <h1>Name: {name}</h1>
+      <h3>Hobbies: {hobbies}</h3>
+      {children} {/* children word can't change, else code won't work */}
     </>
   );
 };
