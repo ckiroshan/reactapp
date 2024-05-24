@@ -1,14 +1,12 @@
-import Add from "./components/Add";
 import Greetings from "./components/Greetings";
-import Calculate from "./components/Calculate";
+import Maped from "./components/Maped";
 
 function App() {
   return (
     <>
       <h1>React Mastery begins Now!</h1>
       <Greetings />
-      <Add />
-      <Calculate />
+      <Maped />
     </>
   );
 }
