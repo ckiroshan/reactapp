@@ -1,4 +1,8 @@
-* {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -7,11 +11,11 @@
 body {
   background: #000000dc;
   color: #ffffffc7;
-  /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 1); */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
 }
 
 h1 {
   color: white !important;
   background-color: #712cf9;
   padding: 10px;
-}
+} */
