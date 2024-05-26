@@ -8,15 +8,22 @@ const Movies = () => {
     { id: 3, title: "John Wick 3", ratings: 8 },
   ]);
 
+  const movieTitles = ["The Shawshank Redemption", "The Godfather", "The Dark Knight", "Pulp Fiction", "The Lord of the Rings: The Return of the King", "Forrest Gump", "Inception", "Fight Club", "The Matrix", "Goodfellas", "Star Wars: Episode V - The Empire Strikes Back"];
+
   const handleClick = () => {
-    SetMovies(movies.map((m) => (m.id === 1 ? { ...movies, title: "Jungle Beach" } : m)));
+    SetMovies(
+      movies.map((m) => {
+        const randomMovieIndex = Math.floor(Math.random() * movieTitles.length);
+        return { ...m, title: movieTitles[randomMovieIndex] };
+      })
+    );
   };
 
   return (
     <>
       <div className="container py-6 text-3xl">
         {movies.map((movie) => (
-          <li className="font-medium" key={Math.random()}>
+          <li className="font-medium" key={movie.id}>
             Movie: <span className="font-bold">{movie.title}</span>
           </li>
         ))}
