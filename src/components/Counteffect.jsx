@@ -1,29 +1,26 @@
 import { useState, useEffect } from "react";
 
-const style = {
-  container: "container py-6 flex",
-  heading: "font-bold text-3xl flex",
-  button: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 ml-4 rounded",
-};
-
 const Counteffect = () => {
-  const [value, SetValue] = useState(0);
+  const [data, SetData] = useState([]);
 
   useEffect(() => {
-    console.log("Hey there...");
-    document.title = `Count: ${value}`;
-  },[value]);
+    async function getData() {
+      const response = await fetch("http://jsonplaceholder.typicode.com/posts");
+      const data = await response.json();
+      if (data && data.length) SetData(data);
+    }
 
-  const handleValue = () => SetValue(value + 1);
-
+    getData();
+  }, []);
 
   return (
     <>
-      <div className={style.container}>
-        <h1 className={style.heading}>{value}</h1>
-        <button onClick={handleValue} className={style.button}>
-          +
-        </button>
+      <div className="container py-6">
+        <ul>
+          {data.map((item) => (
+            <li key={Math.random()}>{item.title}</li>
+          ))}
+        </ul>
       </div>
     </>
   );
