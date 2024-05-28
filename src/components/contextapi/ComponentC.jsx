@@ -1,17 +1,18 @@
 import { Data } from "../../App";
+import { useContext } from "react";
 
 const style = {
   heading: "text-3xl",
 };
 
 const ComponentC = () => {
+  const name = useContext(Data);
+
   return (
     <>
-      <Data.Consumer>
-        {(name) => {
-          return <h1 className={style.heading}>My name is: {name}</h1>;
-        }}
-      </Data.Consumer>
+      <h1>
+        <h1 className={style.heading}>My name is: {name}</h1>;
+      </h1>
     </>
   );
 };
